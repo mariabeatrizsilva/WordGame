@@ -90,28 +90,23 @@ class Main:
 		"""
 		while True:
 			self._run_()
-			self.ship.update()
+			self.player.update()
 			self.target.update()
 			self.update_objectpositions()
 			self.update_screen()
  
 	def update_objectsposition(self):
-		"""updates the cannonball's position and deletes the cannonball from the 
-  		cannonball list if it exits the screen
+	
 		
-  		Side effects:
-			Prints a message to the console if you successfully hit the target
-			and removes a cannonball from the cannonballs attribute everytime
-			you miss. 
-   
-		"""
+  		
+		
 		self.objectsposition.update()
-		for cannonball in self.object_positions.copy():
-				if cannonball.rect.bottom <= 0:
+		for objectposition in self.object_positions.copy():
+				if objectionposition.rect.bottom <= 0:
 					self.objectposition.remove(update_objectsposition)
 				
-				elif cannonball.rect.bottom == self.target.rect.bottom and cannonball.rect.left > self.target.rect.left and cannonball.rect.right < self.target.rect.right:
-					self.cannonballs.remove(CannonBall)
+				elif objectposition.rect.bottom == self.target.rect.bottom and objectpoistion.rect.left > self.target.rect.left and objectposition.rect.right < self.target.rect.right:
+					self.objectposition.remove(object)
 					print("You have hit the target you win!")
 					sys.exit()
 		
