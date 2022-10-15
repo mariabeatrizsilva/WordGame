@@ -114,21 +114,6 @@ class Main:
 					self.cannonballs.remove(CannonBall)
 					print("You have hit the target you win!")
 					sys.exit()
-     		
-	def fire_cannonball(self):
-		"""initializes a new cannonball on the screen.
-	
-		Side effects:
-			Prints a message if you run out of cannonballs without hitting
-			the target. 
-  
-		"""	
-		if len(self.cannonballs) < self.settings.cannonballs_allowed:
-			new_cannonball = CannonBall(self)
-			self.cannonballs.add(new_cannonball)
-		else:
-			print("You lose! You ran out of cannonballs")
-			sys.exit()
 		
 	def update_screen(self):
 		"""Redraws the screen with every pass through the loop
@@ -143,7 +128,7 @@ class Main:
 		pygame.display.flip()
   
 def parse_args(arglist):
-	"""Takes a difficulty from the user and sets the player and other object speed
+	"""Takes a word difficulty from the user and sets the player and other object speed
 		accordingly. (Parse command-line arguments)
 
 	Args:
